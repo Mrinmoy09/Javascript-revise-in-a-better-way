@@ -8,7 +8,7 @@
     4.null
     5.undefined
     6.Symbol
-    7.BigInt
+    7.BigInt (any number greater then 2^53 is a bigInt)
 
     ------Reference(non primitive) Data Types-------
     1.Array
@@ -32,3 +32,14 @@ const anotherId = Symbol('123');
 // console.log(anotherId); // Symbol(123)
 
 console.log(userId == anotherId) //false -- why false? There value is same but both are unique;
+
+const fruits = ["Apple" , "Orange" , "Banana"] // Array
+const user = {
+    name:"Mrinmoy Arnob",
+    email: "abc@gmail.com",
+    id: 12345
+} // Object
+
+function callTheUser(){
+    console.log(user);
+} // Function
