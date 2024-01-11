@@ -31,7 +31,7 @@ const userId = Symbol('123');
 const anotherId = Symbol('123');
 // console.log(anotherId); // Symbol(123)
 
-console.log(userId == anotherId) //false -- why false? There value is same but both are unique;
+// console.log(userId == anotherId) //false -- why false? There value is same but both are unique;
 
 const fruits = ["Apple" , "Orange" , "Banana"] // Array
 const user = {
@@ -41,5 +41,37 @@ const user = {
 } // Object
 
 function callTheUser(){
-    console.log(user);
+    // console.log(user);
 } // Function
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/* 
+----------------------------Stack and Heap memory---------------------------------------
+
+Primitive Data Types - Stack Memory
+Non-primitive data types - Heap memory
+
+Stack - only gives a copy
+Heap - it works with reference
+
+*/
+
+let studentName = "Mrinmoy";
+
+let anotherStudentName = studentName; //anotherStudentName is a different stack which only contains the value of studentName
+anotherStudentName = "Arnob" // It is a copy of studentName
+
+// console.log(studentName); // Mrinmoy - Because we are changing the value in a different stack
+// console.log(anotherStudentName);
+
+let studentOne = {
+    name:"John",
+    studentId: 123
+}
+
+let studentTwo = studentOne; // It directly works with the refrence and for now it is studentOne
+studentTwo.studentId = 345; // It is also changing the value of studentOne.studentId;
+console.log(studentOne); // { name: 'John', studentId: 345 }
+console.log(studentTwo); // { name: 'John', studentId: 345 }
